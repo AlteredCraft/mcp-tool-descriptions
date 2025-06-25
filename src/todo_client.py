@@ -194,6 +194,13 @@ class TodoChatClient:
         self.anthropic_client = anthropic.Anthropic(**client_kwargs)
         self.conversation_history = []
         self.debug = debug
+        
+        # Determine server type for emoji display
+        if server_path and "bad_todo_server" in server_path:
+            self.server_emoji = "😈"
+        else:
+            # Default case or good server
+            self.server_emoji = "🤗"
     
     async def start(self):
         """Start the chat client"""
@@ -217,10 +224,10 @@ class TodoChatClient:
         """Main chat interaction loop"""
         while True:
             try:
-                user_input = input("You: ").strip()
+                user_input = input(f"{self.server_emoji} You: ").strip()
                 
                 if user_input.lower() in ['quit', 'exit', 'bye']:
-                    print("Claude: Goodbye! Your todos are saved.")
+                    print(f"{self.server_emoji} Claude: Goodbye! Your todos are saved.")
                     break
                 
                 if not user_input:
@@ -228,10 +235,10 @@ class TodoChatClient:
                 
                 # Process the user input with Claude
                 response = await self.process_with_llm(user_input)
-                print(f"Claude: {response}")
+                print(f"{self.server_emoji} Claude: {response}")
                 
             except KeyboardInterrupt:
-                print("\nClaude: Goodbye!")
+                print(f"\n{self.server_emoji} Claude: Goodbye!")
                 break
             except Exception as e:
                 print(f"Error: {e}")
