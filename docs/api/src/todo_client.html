@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>src.todo_client API documentation</title>
+<meta name="description" content="Todo MCP Host Application - Natural Language Interface for Todo Management …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>src.todo_client</code></h1>
+</header>
+<section id="section-intro">
+<p>Todo MCP Host Application - Natural Language Interface for Todo Management</p>
+<p>This application demonstrates how to build an MCP Host that uses AI to provide
+natural language interfaces to external systems through the Model Context Protocol.</p>
+<p>Key Concepts for Mid-Level Developers:</p>
+<ol>
+<li>
+<p>MCP Host Pattern: This application acts as an MCP Host, similar to Claude Desktop
+or IDEs, that connects to MCP servers to access data and functionality.</p>
+</li>
+<li>
+<p>AI-Powered Orchestration: We use Claude API to interpret user intent and
+determine which MCP tools to call, but the host application orchestrates
+the entire flow.</p>
+</li>
+<li>
+<p>Natural Language as UI: Instead of building complex UIs, the host uses AI to
+interpret user intent and translate it to MCP tool calls.</p>
+</li>
+<li>
+<p>Structured Communication: The host provides the AI with available MCP tools
+and handles the execution based on AI recommendations.</p>
+</li>
+</ol>
+<p>This pattern represents the future of applications - where MCP hosts can leverage
+AI to provide intuitive interfaces while maintaining standardized connections
+to various data sources and services.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="src.todo_client.main"><code class="name flex">
+<span>async def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def main():
+    &#34;&#34;&#34;Main entry point for the Todo MCP Client.
+    
+    This function demonstrates several important patterns:
+    1. Environment-based configuration (API keys)
+    2. Command-line argument handling for flexibility
+    3. Proper async resource management with cleanup
+    
+    For mid-level developers: This structure shows how to build
+    production-ready AI applications with proper configuration
+    and error handling.
+    &#34;&#34;&#34;
+    # Load environment variables from .env.local
+    # This keeps sensitive data like API keys out of code
+    env_path = Path(__file__).parent.parent / &#34;.env.local&#34;
+    load_dotenv(env_path)
+    
+    # Parse command line arguments
+    # This allows flexibility in deployment and testing
+    parser = argparse.ArgumentParser(description=&#34;Todo Client - Natural language interface for todo management&#34;)
+    parser.add_argument(
+        &#34;--server-path&#34;, 
+        type=str, 
+        help=&#34;Path to the todo server script (default: ./todo_server.py relative to this script)&#34;
+    )
+    parser.add_argument(
+        &#34;--debug&#34;,
+        action=&#34;store_true&#34;,
+        help=&#34;Enable debug logging for MCP tool calls and LLM API calls&#34;
+    )
+    args = parser.parse_args()
+    
+    # Check for API key
+    # Critical for AI applications - no key means no AI capabilities
+    api_key = os.getenv(&#34;ANTHROPIC_API_KEY&#34;)
+    if not api_key:
+        print(&#34;Error: ANTHROPIC_API_KEY not found&#34;)
+        print(&#34;Please ensure your .env.local file contains: ANTHROPIC_API_KEY=your-api-key-here&#34;)
+        sys.exit(1)
+    
+    # Create and run the client with proper cleanup
+    client = TodoChatClient(api_key, server_path=args.server_path, debug=args.debug)
+    try:
+        await client.start()
+    finally:
+        # Always clean up resources, even if errors occur
+        await client.cleanup()</code></pre>
+</details>
+<div class="desc"><p>Main entry point for the Todo MCP Client.</p>
+<p>This function demonstrates several important patterns:
+1. Environment-based configuration (API keys)
+2. Command-line argument handling for flexibility
+3. Proper async resource management with cleanup</p>
+<p>For mid-level developers: This structure shows how to build
+production-ready AI applications with proper configuration
+and error handling.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="src.todo_client.TodoChatClient"><code class="flex name class">
+<span>class <span class="ident">TodoChatClient</span></span>
+<span>(</span><span>anthropic_api_key: str, server_path: str | None = None, debug: bool = False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TodoChatClient:
+    &#34;&#34;&#34;MCP Host application with AI-powered natural language interface.
+    
+    This class implements the MCP Host pattern:
+    1. User speaks in natural language to the host application
+    2. Host sends request to AI (Claude API) along with available MCP tools
+    3. AI analyzes intent and recommends which MCP tool to use
+    4. Host executes the MCP tool call via its MCP client
+    5. Host formats and presents results back to the user
+    
+    This pattern is transformative for software development:
+    - Standardizes AI integration through MCP
+    - Reduces UI development complexity
+    - Makes applications more accessible
+    - Enables rapid prototyping of user interactions
+    - Allows non-technical users to interact with complex systems
+    
+    For mid-level developers: This shows how to build MCP hosts that leverage
+    AI for natural language interfaces while maintaining proper separation
+    between AI services and application logic.
+    &#34;&#34;&#34;
+    
+    def __init__(self, anthropic_api_key: str, server_path: Optional[str] = None, debug: bool = False):
+        &#34;&#34;&#34;Initialize the chat client.
+        
+        Args:
+            anthropic_api_key: API key for Claude
+            server_path: Optional path to the MCP server
+            debug: Enable debug logging for tool calls and API requests
+        &#34;&#34;&#34;
+        self.mcp_client = TodoMCPClient(server_path=server_path)
+        
+        # Configure Anthropic client with proxy support if needed
+        client_kwargs = {&#34;api_key&#34;: anthropic_api_key}
+        proxy_url = os.getenv(&#34;HTTPS_PROXY&#34;) or os.getenv(&#34;https_proxy&#34;)
+        
+        if proxy_url:
+            import httpx
+            client_kwargs[&#34;http_client&#34;] = httpx.Client(
+                proxy=proxy_url,
+                verify=False  # Disable SSL verification for corporate proxies
+            )
+        
+        self.anthropic_client = anthropic.Anthropic(**client_kwargs)
+        self.conversation_history = []
+        self.debug = debug
+    
+    async def start(self):
+        &#34;&#34;&#34;Start the chat client&#34;&#34;&#34;
+        print(&#34;Todo Chat Client - Powered by Claude&#34;)
+        print(&#34;=&#34; * 50)
+        print(&#34;Connecting to Todo Server...&#34;)
+        
+        await self.mcp_client.connect()
+        
+        print(&#34;\nWelcome! I can help you manage your todos.&#34;)
+        print(&#34;Examples of what you can say:&#34;)
+        print(&#34;- &#39;Add a todo to buy groceries&#39;&#34;)
+        print(&#34;- &#39;Show me all my todos&#39;&#34;)
+        print(&#34;- &#39;Mark todo 1 as complete&#39;&#34;)
+        print(&#34;- &#39;Delete the shopping todo&#39;&#34;)
+        print(&#34;\nType &#39;quit&#39; to exit.\n&#34;)
+        
+        await self.chat_loop()
+    
+    async def chat_loop(self):
+        &#34;&#34;&#34;Main chat interaction loop&#34;&#34;&#34;
+        while True:
+            try:
+                user_input = input(&#34;You: &#34;).strip()
+                
+                if user_input.lower() in [&#39;quit&#39;, &#39;exit&#39;, &#39;bye&#39;]:
+                    print(&#34;Claude: Goodbye! Your todos are saved.&#34;)
+                    break
+                
+                if not user_input:
+                    continue
+                
+                # Process the user input with Claude
+                response = await self.process_with_llm(user_input)
+                print(f&#34;Claude: {response}&#34;)
+                
+            except KeyboardInterrupt:
+                print(&#34;\nClaude: Goodbye!&#34;)
+                break
+            except Exception as e:
+                print(f&#34;Error: {e}&#34;)
+    
+    async def process_with_llm(self, user_input: str) -&gt; str:
+        &#34;&#34;&#34;Process user input using Claude with multi-pass tool execution.
+        
+        This implements a multi-pass pattern where:
+        1. Claude understands the user&#39;s request
+        2. Claude can make multiple tool calls to gather information
+        3. Claude analyzes tool results to make decisions
+        4. Claude continues until it has a complete answer
+        
+        Args:
+            user_input: Natural language message from the user
+            
+        Returns:
+            Natural language response with complete results
+        &#34;&#34;&#34;
+        # System prompt that enables multi-pass reasoning
+        system_prompt = &#34;&#34;&#34;You are a helpful assistant that manages todos using MCP tools.
+
+You can use these tools to help users manage their todo lists. You may need to:
+- Call multiple tools to complete a request
+- Analyze results from one tool before calling another
+- Ask clarifying questions if a request is ambiguous
+- Provide thoughtful summaries of data
+
+Approach each request step by step:
+1. Understand what the user wants
+2. Determine which tools you need to use
+3. Execute tools and analyze their results
+4. Continue until you have a complete answer
+5. Provide a clear, helpful response to the user
+
+Be conversational and helpful in your responses.&#34;&#34;&#34;
+        
+        # Convert MCP tools to Anthropic tool format
+        tools = self.convert_to_anthropic_tools()
+        
+        # Initialize conversation with user input
+        messages = [{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: user_input}]
+        
+        # Multi-pass loop - continue until Claude provides final answer
+        max_iterations = 10  # Prevent infinite loops
+        
+        for iteration in range(max_iterations):
+            try:
+                # Debug logging for LLM API calls
+                if self.debug:
+                    print(f&#34;🤖 LLM API Call #{iteration + 1}: claude-3-5-sonnet-20241022&#34;)
+                    print(f&#34;🤖 Messages count: {len(messages)}&#34;)
+                    print(f&#34;🤖 Tools available: {len(tools)}&#34;)
+                
+                # Get Claude&#39;s response with tools
+                response = self.anthropic_client.messages.create(
+                    model=&#34;claude-3-5-sonnet-20241022&#34;,
+                    max_tokens=1000,
+                    temperature=0,
+                    system=system_prompt,
+                    messages=messages,
+                    tools=tools
+                )
+                
+                # Debug logging for LLM responses
+                if self.debug:
+                    tool_calls = [block for block in response.content if block.type == &#34;tool_use&#34;]
+                    text_blocks = [block for block in response.content if block.type == &#34;text&#34;]
+                    print(f&#34;🤖 LLM Response: {len(tool_calls)} tool calls, {len(text_blocks)} text blocks&#34;)
+                    if text_blocks and not tool_calls:
+                        print(f&#34;🤖 Final Response: {text_blocks[0].text[:100]}{&#39;...&#39; if len(text_blocks[0].text) &gt; 100 else &#39;&#39;}&#34;)
+                
+                # Add assistant message to conversation
+                messages.append({&#34;role&#34;: &#34;assistant&#34;, &#34;content&#34;: response.content})
+                
+                # Check if Claude made any tool calls
+                tool_calls = [block for block in response.content if block.type == &#34;tool_use&#34;]
+                
+                if not tool_calls:
+                    # No tool calls means Claude has final answer
+                    # Extract text from response
+                    text_blocks = [block for block in response.content if block.type == &#34;text&#34;]
+                    if text_blocks:
+                        return text_blocks[0].text
+                    else:
+                        return &#34;I completed the task.&#34;
+                
+                # Execute each tool call
+                for tool_call in tool_calls:
+                    tool_name = tool_call.name
+                    tool_args = tool_call.input
+                    tool_id = tool_call.id
+                    
+                    try:
+                        # Debug logging for tool calls
+                        if self.debug:
+                            print(f&#34;🔧 MCP Tool Call: {tool_name}({json.dumps(tool_args, indent=2)})&#34;)
+                        
+                        # Execute the MCP tool
+                        result = await self.mcp_client.call_tool(tool_name, tool_args)
+                        
+                        # Parse the result
+                        if hasattr(result, &#39;content&#39;):
+                            result_data = json.loads(result.content[0].text) if result.content else {}
+                        else:
+                            result_data = {}
+                        
+                        # Debug logging for tool results
+                        if self.debug:
+                            print(f&#34;🔧 MCP Tool Result: {json.dumps(result_data, indent=2)}&#34;)
+                        
+                        # Add tool result to conversation
+                        messages.append({
+                            &#34;role&#34;: &#34;user&#34;,
+                            &#34;content&#34;: [{
+                                &#34;type&#34;: &#34;tool_result&#34;,
+                                &#34;tool_use_id&#34;: tool_id,
+                                &#34;content&#34;: json.dumps(result_data)
+                            }]
+                        })
+                        
+                    except Exception as e:
+                        # Add error to conversation so Claude can handle it
+                        messages.append({
+                            &#34;role&#34;: &#34;user&#34;,
+                            &#34;content&#34;: [{
+                                &#34;type&#34;: &#34;tool_result&#34;,
+                                &#34;tool_use_id&#34;: tool_id,
+                                &#34;content&#34;: f&#34;Error: {str(e)}&#34;,
+                                &#34;is_error&#34;: True
+                            }]
+                        })
+                
+            except anthropic.APIConnectionError as e:
+                # Check for SSL certificate errors
+                error_msg = str(e).lower()
+                if &#34;certificate&#34; in error_msg or &#34;ssl&#34; in error_msg:
+                    return (
+                        &#34;🔒 SSL Certificate Error: Unable to connect to Claude API.\n&#34;
+                        &#34;\n&#34;
+                        &#34;This could be caused by:\n&#34;
+                        &#34;1. Missing Python certificates (common on macOS)\n&#34;
+                        &#34;2. Corporate proxy/firewall (e.g., ZScaler) intercepting SSL\n&#34;
+                        &#34;\n&#34;
+                        &#34;Possible solutions:\n&#34;
+                        &#34;• Run: pip install --upgrade certifi\n&#34;
+                        &#34;• Check with your IT team about proxy certificates\n&#34;
+                        &#34;• Set proxy environment variables if behind a corporate firewall&#34;
+                    )
+                else:
+                    return (
+                        &#34;🌐 Connection Error: Unable to reach Claude API.\n&#34;
+                        &#34;Please check:\n&#34;
+                        &#34;1. Your internet connection\n&#34;
+                        &#34;2. Your ANTHROPIC_API_KEY is valid\n&#34;
+                        &#34;3. If behind a corporate proxy, set HTTPS_PROXY in your .env.local file&#34;
+                    )
+            except anthropic.AuthenticationError as e:
+                return (
+                    &#34;🔑 Authentication Error: Invalid API key.\n&#34;
+                    &#34;Please check that your ANTHROPIC_API_KEY in .env.local is correct.&#34;
+                )
+            except Exception as e:
+                return f&#34;Error: {str(e)}&#34;
+        
+        return &#34;I need more time to complete this request. Please try breaking it into smaller steps.&#34;
+    
+    def convert_to_anthropic_tools(self) -&gt; list:
+        &#34;&#34;&#34;Convert MCP tools to Anthropic&#39;s tool format.&#34;&#34;&#34;
+        anthropic_tools = []
+        
+        for tool in self.mcp_client.available_tools:
+            # Parse parameter schema from the tool object
+            params = tool.inputSchema if hasattr(tool, &#39;inputSchema&#39;) else {}
+            
+            anthropic_tool = {
+                &#34;name&#34;: tool.name,
+                &#34;description&#34;: tool.description if hasattr(tool, &#39;description&#39;) else &#39;&#39;,
+                &#34;input_schema&#34;: {
+                    &#34;type&#34;: &#34;object&#34;,
+                    &#34;properties&#34;: params.get(&#39;properties&#39;, {}) if isinstance(params, dict) else {},
+                    &#34;required&#34;: params.get(&#39;required&#39;, []) if isinstance(params, dict) else []
+                }
+            }
+            anthropic_tools.append(anthropic_tool)
+        
+        return anthropic_tools
+    
+    async def cleanup(self):
+        &#34;&#34;&#34;Clean up resources&#34;&#34;&#34;
+        await self.mcp_client.close()</code></pre>
+</details>
+<div class="desc"><p>MCP Host application with AI-powered natural language interface.</p>
+<p>This class implements the MCP Host pattern:
+1. User speaks in natural language to the host application
+2. Host sends request to AI (Claude API) along with available MCP tools
+3. AI analyzes intent and recommends which MCP tool to use
+4. Host executes the MCP tool call via its MCP client
+5. Host formats and presents results back to the user</p>
+<p>This pattern is transformative for software development:
+- Standardizes AI integration through MCP
+- Reduces UI development complexity
+- Makes applications more accessible
+- Enables rapid prototyping of user interactions
+- Allows non-technical users to interact with complex systems</p>
+<p>For mid-level developers: This shows how to build MCP hosts that leverage
+AI for natural language interfaces while maintaining proper separation
+between AI services and application logic.</p>
+<p>Initialize the chat client.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>anthropic_api_key</code></strong></dt>
+<dd>API key for Claude</dd>
+<dt><strong><code>server_path</code></strong></dt>
+<dd>Optional path to the MCP server</dd>
+<dt><strong><code>debug</code></strong></dt>
+<dd>Enable debug logging for tool calls and API requests</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="src.todo_client.TodoChatClient.chat_loop"><code class="name flex">
+<span>async def <span class="ident">chat_loop</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def chat_loop(self):
+    &#34;&#34;&#34;Main chat interaction loop&#34;&#34;&#34;
+    while True:
+        try:
+            user_input = input(&#34;You: &#34;).strip()
+            
+            if user_input.lower() in [&#39;quit&#39;, &#39;exit&#39;, &#39;bye&#39;]:
+                print(&#34;Claude: Goodbye! Your todos are saved.&#34;)
+                break
+            
+            if not user_input:
+                continue
+            
+            # Process the user input with Claude
+            response = await self.process_with_llm(user_input)
+            print(f&#34;Claude: {response}&#34;)
+            
+        except KeyboardInterrupt:
+            print(&#34;\nClaude: Goodbye!&#34;)
+            break
+        except Exception as e:
+            print(f&#34;Error: {e}&#34;)</code></pre>
+</details>
+<div class="desc"><p>Main chat interaction loop</p></div>
+</dd>
+<dt id="src.todo_client.TodoChatClient.cleanup"><code class="name flex">
+<span>async def <span class="ident">cleanup</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def cleanup(self):
+    &#34;&#34;&#34;Clean up resources&#34;&#34;&#34;
+    await self.mcp_client.close()</code></pre>
+</details>
+<div class="desc"><p>Clean up resources</p></div>
+</dd>
+<dt id="src.todo_client.TodoChatClient.convert_to_anthropic_tools"><code class="name flex">
+<span>def <span class="ident">convert_to_anthropic_tools</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def convert_to_anthropic_tools(self) -&gt; list:
+    &#34;&#34;&#34;Convert MCP tools to Anthropic&#39;s tool format.&#34;&#34;&#34;
+    anthropic_tools = []
+    
+    for tool in self.mcp_client.available_tools:
+        # Parse parameter schema from the tool object
+        params = tool.inputSchema if hasattr(tool, &#39;inputSchema&#39;) else {}
+        
+        anthropic_tool = {
+            &#34;name&#34;: tool.name,
+            &#34;description&#34;: tool.description if hasattr(tool, &#39;description&#39;) else &#39;&#39;,
+            &#34;input_schema&#34;: {
+                &#34;type&#34;: &#34;object&#34;,
+                &#34;properties&#34;: params.get(&#39;properties&#39;, {}) if isinstance(params, dict) else {},
+                &#34;required&#34;: params.get(&#39;required&#39;, []) if isinstance(params, dict) else []
+            }
+        }
+        anthropic_tools.append(anthropic_tool)
+    
+    return anthropic_tools</code></pre>
+</details>
+<div class="desc"><p>Convert MCP tools to Anthropic's tool format.</p></div>
+</dd>
+<dt id="src.todo_client.TodoChatClient.process_with_llm"><code class="name flex">
+<span>async def <span class="ident">process_with_llm</span></span>(<span>self, user_input: str) ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">    async def process_with_llm(self, user_input: str) -&gt; str:
+        &#34;&#34;&#34;Process user input using Claude with multi-pass tool execution.
+        
+        This implements a multi-pass pattern where:
+        1. Claude understands the user&#39;s request
+        2. Claude can make multiple tool calls to gather information
+        3. Claude analyzes tool results to make decisions
+        4. Claude continues until it has a complete answer
+        
+        Args:
+            user_input: Natural language message from the user
+            
+        Returns:
+            Natural language response with complete results
+        &#34;&#34;&#34;
+        # System prompt that enables multi-pass reasoning
+        system_prompt = &#34;&#34;&#34;You are a helpful assistant that manages todos using MCP tools.
+
+You can use these tools to help users manage their todo lists. You may need to:
+- Call multiple tools to complete a request
+- Analyze results from one tool before calling another
+- Ask clarifying questions if a request is ambiguous
+- Provide thoughtful summaries of data
+
+Approach each request step by step:
+1. Understand what the user wants
+2. Determine which tools you need to use
+3. Execute tools and analyze their results
+4. Continue until you have a complete answer
+5. Provide a clear, helpful response to the user
+
+Be conversational and helpful in your responses.&#34;&#34;&#34;
+        
+        # Convert MCP tools to Anthropic tool format
+        tools = self.convert_to_anthropic_tools()
+        
+        # Initialize conversation with user input
+        messages = [{&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: user_input}]
+        
+        # Multi-pass loop - continue until Claude provides final answer
+        max_iterations = 10  # Prevent infinite loops
+        
+        for iteration in range(max_iterations):
+            try:
+                # Debug logging for LLM API calls
+                if self.debug:
+                    print(f&#34;🤖 LLM API Call #{iteration + 1}: claude-3-5-sonnet-20241022&#34;)
+                    print(f&#34;🤖 Messages count: {len(messages)}&#34;)
+                    print(f&#34;🤖 Tools available: {len(tools)}&#34;)
+                
+                # Get Claude&#39;s response with tools
+                response = self.anthropic_client.messages.create(
+                    model=&#34;claude-3-5-sonnet-20241022&#34;,
+                    max_tokens=1000,
+                    temperature=0,
+                    system=system_prompt,
+                    messages=messages,
+                    tools=tools
+                )
+                
+                # Debug logging for LLM responses
+                if self.debug:
+                    tool_calls = [block for block in response.content if block.type == &#34;tool_use&#34;]
+                    text_blocks = [block for block in response.content if block.type == &#34;text&#34;]
+                    print(f&#34;🤖 LLM Response: {len(tool_calls)} tool calls, {len(text_blocks)} text blocks&#34;)
+                    if text_blocks and not tool_calls:
+                        print(f&#34;🤖 Final Response: {text_blocks[0].text[:100]}{&#39;...&#39; if len(text_blocks[0].text) &gt; 100 else &#39;&#39;}&#34;)
+                
+                # Add assistant message to conversation
+                messages.append({&#34;role&#34;: &#34;assistant&#34;, &#34;content&#34;: response.content})
+                
+                # Check if Claude made any tool calls
+                tool_calls = [block for block in response.content if block.type == &#34;tool_use&#34;]
+                
+                if not tool_calls:
+                    # No tool calls means Claude has final answer
+                    # Extract text from response
+                    text_blocks = [block for block in response.content if block.type == &#34;text&#34;]
+                    if text_blocks:
+                        return text_blocks[0].text
+                    else:
+                        return &#34;I completed the task.&#34;
+                
+                # Execute each tool call
+                for tool_call in tool_calls:
+                    tool_name = tool_call.name
+                    tool_args = tool_call.input
+                    tool_id = tool_call.id
+                    
+                    try:
+                        # Debug logging for tool calls
+                        if self.debug:
+                            print(f&#34;🔧 MCP Tool Call: {tool_name}({json.dumps(tool_args, indent=2)})&#34;)
+                        
+                        # Execute the MCP tool
+                        result = await self.mcp_client.call_tool(tool_name, tool_args)
+                        
+                        # Parse the result
+                        if hasattr(result, &#39;content&#39;):
+                            result_data = json.loads(result.content[0].text) if result.content else {}
+                        else:
+                            result_data = {}
+                        
+                        # Debug logging for tool results
+                        if self.debug:
+                            print(f&#34;🔧 MCP Tool Result: {json.dumps(result_data, indent=2)}&#34;)
+                        
+                        # Add tool result to conversation
+                        messages.append({
+                            &#34;role&#34;: &#34;user&#34;,
+                            &#34;content&#34;: [{
+                                &#34;type&#34;: &#34;tool_result&#34;,
+                                &#34;tool_use_id&#34;: tool_id,
+                                &#34;content&#34;: json.dumps(result_data)
+                            }]
+                        })
+                        
+                    except Exception as e:
+                        # Add error to conversation so Claude can handle it
+                        messages.append({
+                            &#34;role&#34;: &#34;user&#34;,
+                            &#34;content&#34;: [{
+                                &#34;type&#34;: &#34;tool_result&#34;,
+                                &#34;tool_use_id&#34;: tool_id,
+                                &#34;content&#34;: f&#34;Error: {str(e)}&#34;,
+                                &#34;is_error&#34;: True
+                            }]
+                        })
+                
+            except anthropic.APIConnectionError as e:
+                # Check for SSL certificate errors
+                error_msg = str(e).lower()
+                if &#34;certificate&#34; in error_msg or &#34;ssl&#34; in error_msg:
+                    return (
+                        &#34;🔒 SSL Certificate Error: Unable to connect to Claude API.\n&#34;
+                        &#34;\n&#34;
+                        &#34;This could be caused by:\n&#34;
+                        &#34;1. Missing Python certificates (common on macOS)\n&#34;
+                        &#34;2. Corporate proxy/firewall (e.g., ZScaler) intercepting SSL\n&#34;
+                        &#34;\n&#34;
+                        &#34;Possible solutions:\n&#34;
+                        &#34;• Run: pip install --upgrade certifi\n&#34;
+                        &#34;• Check with your IT team about proxy certificates\n&#34;
+                        &#34;• Set proxy environment variables if behind a corporate firewall&#34;
+                    )
+                else:
+                    return (
+                        &#34;🌐 Connection Error: Unable to reach Claude API.\n&#34;
+                        &#34;Please check:\n&#34;
+                        &#34;1. Your internet connection\n&#34;
+                        &#34;2. Your ANTHROPIC_API_KEY is valid\n&#34;
+                        &#34;3. If behind a corporate proxy, set HTTPS_PROXY in your .env.local file&#34;
+                    )
+            except anthropic.AuthenticationError as e:
+                return (
+                    &#34;🔑 Authentication Error: Invalid API key.\n&#34;
+                    &#34;Please check that your ANTHROPIC_API_KEY in .env.local is correct.&#34;
+                )
+            except Exception as e:
+                return f&#34;Error: {str(e)}&#34;
+        
+        return &#34;I need more time to complete this request. Please try breaking it into smaller steps.&#34;</code></pre>
+</details>
+<div class="desc"><p>Process user input using Claude with multi-pass tool execution.</p>
+<p>This implements a multi-pass pattern where:
+1. Claude understands the user's request
+2. Claude can make multiple tool calls to gather information
+3. Claude analyzes tool results to make decisions
+4. Claude continues until it has a complete answer</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>user_input</code></strong></dt>
+<dd>Natural language message from the user</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Natural language response with complete results</p></div>
+</dd>
+<dt id="src.todo_client.TodoChatClient.start"><code class="name flex">
+<span>async def <span class="ident">start</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def start(self):
+    &#34;&#34;&#34;Start the chat client&#34;&#34;&#34;
+    print(&#34;Todo Chat Client - Powered by Claude&#34;)
+    print(&#34;=&#34; * 50)
+    print(&#34;Connecting to Todo Server...&#34;)
+    
+    await self.mcp_client.connect()
+    
+    print(&#34;\nWelcome! I can help you manage your todos.&#34;)
+    print(&#34;Examples of what you can say:&#34;)
+    print(&#34;- &#39;Add a todo to buy groceries&#39;&#34;)
+    print(&#34;- &#39;Show me all my todos&#39;&#34;)
+    print(&#34;- &#39;Mark todo 1 as complete&#39;&#34;)
+    print(&#34;- &#39;Delete the shopping todo&#39;&#34;)
+    print(&#34;\nType &#39;quit&#39; to exit.\n&#34;)
+    
+    await self.chat_loop()</code></pre>
+</details>
+<div class="desc"><p>Start the chat client</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="src.todo_client.TodoMCPClient"><code class="flex name class">
+<span>class <span class="ident">TodoMCPClient</span></span>
+<span>(</span><span>server_path: str | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TodoMCPClient:
+    &#34;&#34;&#34;MCP client for communicating with the todo server.
+    
+    This class handles the low-level MCP protocol communication.
+    It demonstrates how to:
+    - Connect to an MCP server via stdio (standard input/output)
+    - Discover available tools from the server
+    - Execute tool calls and handle responses
+    
+    For developers: This abstraction layer allows you to interact with
+    MCP servers without dealing with protocol details.
+    &#34;&#34;&#34;
+    
+    def __init__(self, server_path: Optional[str] = None):
+        &#34;&#34;&#34;Initialize the MCP client.
+        
+        Args:
+            server_path: Path to the MCP server script. If not provided,
+                        assumes todo_server.py is in the same directory.
+        &#34;&#34;&#34;
+        self.session = None
+        self.exit_stack = AsyncExitStack()
+        self.available_tools = []
+        if server_path:
+            self.server_path = server_path
+        else:
+            self.server_path = str(Path(__file__).parent / &#34;todo_server.py&#34;)
+    
+    async def connect(self):
+        &#34;&#34;&#34;Connect to the todo server via MCP.
+        
+        This method demonstrates the MCP connection flow:
+        1. Launch the server as a subprocess
+        2. Establish stdio communication channels
+        3. Initialize the MCP session
+        4. Discover available tools
+        
+        This pattern allows any application to become MCP-enabled
+        without modifying its core code.
+        &#34;&#34;&#34;
+        # Configure how to launch the MCP server
+        server_params = StdioServerParameters(
+            command=&#34;uv&#34;,  # Using uv to run the Python script
+            args=[&#34;run&#34;, self.server_path],
+            env=None
+        )
+        
+        # Create stdio transport - MCP communicates over stdin/stdout
+        stdio_transport = await self.exit_stack.enter_async_context(
+            stdio_client(server_params)
+        )
+        self.stdio, self.write = stdio_transport
+        
+        # Create MCP session
+        self.session = await self.exit_stack.enter_async_context(
+            ClientSession(self.stdio, self.write)
+        )
+        
+        # Initialize the connection
+        await self.session.initialize()
+        
+        # Discover available tools - this is key for AI to know what it can do
+        response = await self.session.list_tools()
+        self.available_tools = response.tools
+        print(f&#34;Connected to Todo Server. Available tools: {[tool.name for tool in self.available_tools]}&#34;)
+    
+    async def call_tool(self, tool_name: str, arguments: Dict[str, Any]) -&gt; Any:
+        &#34;&#34;&#34;Call a tool on the MCP server.
+        
+        Args:
+            tool_name: Name of the tool to call (e.g., &#39;create_todo&#39;)
+            arguments: Dictionary of arguments to pass to the tool
+            
+        Returns:
+            The tool&#39;s response, typically containing result data
+            
+        This method shows how MCP standardizes tool execution across
+        different services, making it easy for AI to interact with
+        any MCP-enabled system.
+        &#34;&#34;&#34;
+        if self.session is None:
+            raise RuntimeError(&#34;MCP session not initialized. Call connect() first.&#34;)
+        result = await self.session.call_tool(tool_name, arguments)
+        return result
+    
+    async def close(self):
+        &#34;&#34;&#34;Close the MCP client connection&#34;&#34;&#34;
+        await self.exit_stack.aclose()
+    
+    def get_tools_description(self) -&gt; str:
+        &#34;&#34;&#34;Get a formatted description of available tools.
+        
+        This method formats tool information for the LLM, helping it
+        understand what actions are available. This is crucial for
+        effective AI tool selection.
+        
+        Returns:
+            Formatted string describing all available tools and their parameters
+        &#34;&#34;&#34;
+        tools_desc = &#34;Available todo management tools:\n&#34;
+        for tool in self.available_tools:
+            tools_desc += f&#34;- {tool.name}: {tool.description}\n&#34;
+            # Include parameter information to help AI understand usage
+            if tool.inputSchema and &#39;properties&#39; in tool.inputSchema:
+                tools_desc += f&#34;  Parameters: {list(tool.inputSchema[&#39;properties&#39;].keys())}\n&#34;
+        return tools_desc</code></pre>
+</details>
+<div class="desc"><p>MCP client for communicating with the todo server.</p>
+<p>This class handles the low-level MCP protocol communication.
+It demonstrates how to:
+- Connect to an MCP server via stdio (standard input/output)
+- Discover available tools from the server
+- Execute tool calls and handle responses</p>
+<p>For developers: This abstraction layer allows you to interact with
+MCP servers without dealing with protocol details.</p>
+<p>Initialize the MCP client.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>server_path</code></strong></dt>
+<dd>Path to the MCP server script. If not provided,
+assumes todo_server.py is in the same directory.</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="src.todo_client.TodoMCPClient.call_tool"><code class="name flex">
+<span>async def <span class="ident">call_tool</span></span>(<span>self, tool_name: str, arguments: Dict[str, Any]) ‑> Any</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def call_tool(self, tool_name: str, arguments: Dict[str, Any]) -&gt; Any:
+    &#34;&#34;&#34;Call a tool on the MCP server.
+    
+    Args:
+        tool_name: Name of the tool to call (e.g., &#39;create_todo&#39;)
+        arguments: Dictionary of arguments to pass to the tool
+        
+    Returns:
+        The tool&#39;s response, typically containing result data
+        
+    This method shows how MCP standardizes tool execution across
+    different services, making it easy for AI to interact with
+    any MCP-enabled system.
+    &#34;&#34;&#34;
+    if self.session is None:
+        raise RuntimeError(&#34;MCP session not initialized. Call connect() first.&#34;)
+    result = await self.session.call_tool(tool_name, arguments)
+    return result</code></pre>
+</details>
+<div class="desc"><p>Call a tool on the MCP server.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>tool_name</code></strong></dt>
+<dd>Name of the tool to call (e.g., 'create_todo')</dd>
+<dt><strong><code>arguments</code></strong></dt>
+<dd>Dictionary of arguments to pass to the tool</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>The tool's response, typically containing result data
+This method shows how MCP standardizes tool execution across
+different services, making it easy for AI to interact with
+any MCP-enabled system.</p></div>
+</dd>
+<dt id="src.todo_client.TodoMCPClient.close"><code class="name flex">
+<span>async def <span class="ident">close</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def close(self):
+    &#34;&#34;&#34;Close the MCP client connection&#34;&#34;&#34;
+    await self.exit_stack.aclose()</code></pre>
+</details>
+<div class="desc"><p>Close the MCP client connection</p></div>
+</dd>
+<dt id="src.todo_client.TodoMCPClient.connect"><code class="name flex">
+<span>async def <span class="ident">connect</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def connect(self):
+    &#34;&#34;&#34;Connect to the todo server via MCP.
+    
+    This method demonstrates the MCP connection flow:
+    1. Launch the server as a subprocess
+    2. Establish stdio communication channels
+    3. Initialize the MCP session
+    4. Discover available tools
+    
+    This pattern allows any application to become MCP-enabled
+    without modifying its core code.
+    &#34;&#34;&#34;
+    # Configure how to launch the MCP server
+    server_params = StdioServerParameters(
+        command=&#34;uv&#34;,  # Using uv to run the Python script
+        args=[&#34;run&#34;, self.server_path],
+        env=None
+    )
+    
+    # Create stdio transport - MCP communicates over stdin/stdout
+    stdio_transport = await self.exit_stack.enter_async_context(
+        stdio_client(server_params)
+    )
+    self.stdio, self.write = stdio_transport
+    
+    # Create MCP session
+    self.session = await self.exit_stack.enter_async_context(
+        ClientSession(self.stdio, self.write)
+    )
+    
+    # Initialize the connection
+    await self.session.initialize()
+    
+    # Discover available tools - this is key for AI to know what it can do
+    response = await self.session.list_tools()
+    self.available_tools = response.tools
+    print(f&#34;Connected to Todo Server. Available tools: {[tool.name for tool in self.available_tools]}&#34;)</code></pre>
+</details>
+<div class="desc"><p>Connect to the todo server via MCP.</p>
+<p>This method demonstrates the MCP connection flow:
+1. Launch the server as a subprocess
+2. Establish stdio communication channels
+3. Initialize the MCP session
+4. Discover available tools</p>
+<p>This pattern allows any application to become MCP-enabled
+without modifying its core code.</p></div>
+</dd>
+<dt id="src.todo_client.TodoMCPClient.get_tools_description"><code class="name flex">
+<span>def <span class="ident">get_tools_description</span></span>(<span>self) ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_tools_description(self) -&gt; str:
+    &#34;&#34;&#34;Get a formatted description of available tools.
+    
+    This method formats tool information for the LLM, helping it
+    understand what actions are available. This is crucial for
+    effective AI tool selection.
+    
+    Returns:
+        Formatted string describing all available tools and their parameters
+    &#34;&#34;&#34;
+    tools_desc = &#34;Available todo management tools:\n&#34;
+    for tool in self.available_tools:
+        tools_desc += f&#34;- {tool.name}: {tool.description}\n&#34;
+        # Include parameter information to help AI understand usage
+        if tool.inputSchema and &#39;properties&#39; in tool.inputSchema:
+            tools_desc += f&#34;  Parameters: {list(tool.inputSchema[&#39;properties&#39;].keys())}\n&#34;
+    return tools_desc</code></pre>
+</details>
+<div class="desc"><p>Get a formatted description of available tools.</p>
+<p>This method formats tool information for the LLM, helping it
+understand what actions are available. This is crucial for
+effective AI tool selection.</p>
+<h2 id="returns">Returns</h2>
+<p>Formatted string describing all available tools and their parameters</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="src.todo_client.main" href="#src.todo_client.main">main</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="src.todo_client.TodoChatClient" href="#src.todo_client.TodoChatClient">TodoChatClient</a></code></h4>
+<ul class="">
+<li><code><a title="src.todo_client.TodoChatClient.chat_loop" href="#src.todo_client.TodoChatClient.chat_loop">chat_loop</a></code></li>
+<li><code><a title="src.todo_client.TodoChatClient.cleanup" href="#src.todo_client.TodoChatClient.cleanup">cleanup</a></code></li>
+<li><code><a title="src.todo_client.TodoChatClient.convert_to_anthropic_tools" href="#src.todo_client.TodoChatClient.convert_to_anthropic_tools">convert_to_anthropic_tools</a></code></li>
+<li><code><a title="src.todo_client.TodoChatClient.process_with_llm" href="#src.todo_client.TodoChatClient.process_with_llm">process_with_llm</a></code></li>
+<li><code><a title="src.todo_client.TodoChatClient.start" href="#src.todo_client.TodoChatClient.start">start</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="src.todo_client.TodoMCPClient" href="#src.todo_client.TodoMCPClient">TodoMCPClient</a></code></h4>
+<ul class="">
+<li><code><a title="src.todo_client.TodoMCPClient.call_tool" href="#src.todo_client.TodoMCPClient.call_tool">call_tool</a></code></li>
+<li><code><a title="src.todo_client.TodoMCPClient.close" href="#src.todo_client.TodoMCPClient.close">close</a></code></li>
+<li><code><a title="src.todo_client.TodoMCPClient.connect" href="#src.todo_client.TodoMCPClient.connect">connect</a></code></li>
+<li><code><a title="src.todo_client.TodoMCPClient.get_tools_description" href="#src.todo_client.TodoMCPClient.get_tools_description">get_tools_description</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
